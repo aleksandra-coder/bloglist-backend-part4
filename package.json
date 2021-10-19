@@ -1,0 +1,39 @@
+{
+  "name": "bloglist",
+  "version": "0.0.1",
+  "description": "\"\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node index.js",
+    "dev": "cross-env NODE_ENV=development nodemon index.js",
+    "server": "nodemon index.js --ignore client",
+    "client": "npm start --prefix client",
+    "test": "cross-env NODE_ENV=test jest --verbose --runInBand"
+  },
+  "repository": {
+    "type": "git",
+    "url": "bloglist"
+  },
+  "author": "Aleksandra Postola",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express-async-errors": "^3.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash-contrib": "^241.2.1",
+    "mongoose": "^5.13.10",
+    "mongoose-unique-validator": "^2.0.3"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "express": "^4.17.1",
+    "jest": "^27.2.0",
+    "nodemon": "^2.0.12",
+    "supertest": "^6.1.6"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
