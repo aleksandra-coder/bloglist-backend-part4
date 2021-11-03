@@ -32,9 +32,9 @@ app.use(middleware.requestLogger)
 
 app.use(middleware.tokenExtractor)
 // only executed with path /api/blogs:
-app.use('/api/blogs', middleware.userExtractor, blogsRouter)
+// app.use('/api/blogs', middleware.userExtractor, blogsRouter)
 //  defining the route
-// app.use('/api/blogs', blogsRouter)
+app.use('/api/blogs', blogsRouter)
 
 app.use('/api/users', usersRouter)
 
