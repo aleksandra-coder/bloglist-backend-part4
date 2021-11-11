@@ -35,10 +35,14 @@ app.use(middleware.tokenExtractor)
 // app.use('/api/blogs', middleware.userExtractor, blogsRouter)
 //  defining the route
 app.use('/api/blogs', blogsRouter)
-
 app.use('/api/users', usersRouter)
-
 app.use('/api/login', loginRouter)
+
+// ex 5.17 for empting database for testing with Cypress
+if (process.env.NODE_ENV === 'test') {
+  const testingRouter = require('./controllers/testing')
+  app.use('/api/testing', testingRouter)
+}
 
 app.use(middleware.unknownEndpoint)
 app.use(middleware.errorHandler)
